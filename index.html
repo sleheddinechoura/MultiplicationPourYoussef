@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La forêt des multiplications</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hero" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">Tables de 1 à 10</p>
+          <h1 id="game-title">La forêt des multiplications</h1>
+          <p class="intro">
+            Aide Léo le renard à récolter des étoiles en répondant aux multiplications.
+            Chaque bonne réponse fait grandir ton score et ton sourire !
+          </p>
+        </div>
+        <div class="mascot" aria-hidden="true">🦊</div>
+      </section>
+
+      <section class="controls" aria-label="Réglages du jeu">
+        <label>
+          Table à réviser
+          <select id="table-select">
+            <option value="all">Toutes les tables</option>
+          </select>
+        </label>
+        <button id="new-question" type="button">Nouvelle question</button>
+      </section>
+
+      <section class="card" aria-live="polite">
+        <div class="scoreboard">
+          <span>⭐ Score : <strong id="score">0</strong></span>
+          <span>🔥 Série : <strong id="streak">0</strong></span>
+        </div>
+
+        <p class="question-label">Combien font...</p>
+        <div id="question" class="question">1 × 1 ?</div>
+
+        <form id="answer-form" class="answer-form">
+          <label class="sr-only" for="answer">Ta réponse</label>
+          <input id="answer" type="number" inputmode="numeric" min="0" placeholder="Ta réponse" autocomplete="off" />
+          <button type="submit">Valider</button>
+        </form>
+
+        <div id="feedback" class="feedback neutral">Choisis une réponse et amuse-toi !</div>
+        <div id="reward" class="reward" aria-hidden="true"></div>
+      </section>
+
+      <section class="tips">
+        <h2>Petites astuces</h2>
+        <ul>
+          <li>La table de 2, c'est compter de 2 en 2.</li>
+          <li>Multiplier par 10 ajoute un zéro à la fin.</li>
+          <li>Respire, réfléchis, puis essaie : tu progresses à chaque question !</li>
+        </ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
